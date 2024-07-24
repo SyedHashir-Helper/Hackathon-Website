@@ -1,0 +1,35 @@
+.subscription{
+    margin: 5rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.subscription input{
+    line-height: 2.5rem;
+    font-size: 1rem;
+    padding-left: 1rem;
+    border-radius: 10px;
+    border: 2px solid blue;
+    box-shadow: 10px 10px 10px rgba(255, 196, 4, 0.637);
+    color: blue;
+    margin-right: 1rem;
+    width: calc((100vw - 30%) /2 );
+}
+.subscription button{
+    line-height: 2.5rem;
+    border-radius: 10px;
+    background-color: blue;
+    color: yellow;
+    border:none;
+    padding: 0px 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.subscription button:hover{
+    color: white;
+    cursor: pointer;
+}

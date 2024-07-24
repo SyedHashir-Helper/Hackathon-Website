@@ -1,0 +1,19 @@
+.slider-item img{
+    object-fit: contain;
+}
+
+.slider-item{
+    height: 5rem;
+    /* border-radius: 50%; */
+
+}
+
+.slider-sec{
+    margin: 5% 20%;
+}
+.slider-sec h2{
+    margin: 5% 0%;
+    font-size: 2.5rem; 
+    font-family: Teko;
+    text-align: center;
+}

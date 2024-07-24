@@ -1,0 +1,69 @@
+.schedule-section{
+    text-align: center;
+    margin: 5rem 0rem;
+    padding: 2.5rem 5rem;
+}
+
+.schedule-section h2{
+    margin: 1rem 0rem;
+    font-size: 2.5rem; 
+    font-family: Teko;
+    text-align: center;
+}
+
+.schedule-tabs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+}
+.schedule-tabs div{
+    width: 14em;
+    background-color: yellow;
+    padding: 0.5rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-weight: bold;
+    font-family: Teko;
+    font-size: 1.2em;
+    margin-bottom: 1rem;
+}
+.schedule-table{
+    font-family: Roboto;
+    background:linear-gradient(33deg, rgb(17, 0, 168) 33%, rgb(76, 0, 252) 50%, rgba(76, 0, 252,1) 50%);
+    padding: 5em;
+    
+    border-radius: 15px;
+}
+.schedule-table table{
+    color: white;
+    width: 100%;
+}
+.schedule-table table tbody tr td{
+    font-weight: bold;
+    padding: 1.4rem 0rem;
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+
+.schedule-table table thead th {
+    background-color: yellow;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    color: blue;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+
+}
+
+.schedule-table table thead th span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; 
+}
+
+.active-tab{
+    background: linear-gradient(33deg, rgb(17, 0, 168) 33%, rgb(76, 0, 252) 50%, rgba(76, 0, 252,1) 50%);
+    color: white;
+}

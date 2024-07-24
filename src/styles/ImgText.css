@@ -1,0 +1,28 @@
+.imgtext-box{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    text-align: center;
+    height: 25rem;
+    margin: 0px 5%;
+}
+
+.imgtext-img{
+    width: 50%;
+    background: linear-gradient(33deg, rgb(251, 255, 3) 33%, rgb(252, 247, 0) 50%, rgba(252, 247, 0,1) 50%);
+    /* background: linear-gradient(33deg, rgb(17, 0, 168) 33%, rgb(76, 0, 252) 50%, rgba(255,255,255,1) 50%); */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15%;
+}
+.imgtext-img img{
+    filter: drop-shadow(5px 5px 5px black);
+}
+
+.imgtext-text{
+    width: 50%;
+    font-family: Teko;
+    font-size: 5rem;
+}
