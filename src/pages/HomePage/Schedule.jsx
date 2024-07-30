@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import "../styles/Schedule.css"
+import "../../styles/Schedule.css"
 
 const Schedule = ({timetable}) => {
     const [schedule, setschedule] = useState(timetable[0])

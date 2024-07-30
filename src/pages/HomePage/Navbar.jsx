@@ -1,8 +1,21 @@
-import React from 'react'
-import "../styles/Navabar.css"
-import logo from  "../assets/velo.png"
+import React,{useEffect} from 'react'
+import "../../styles/Navabar.css"
+import logo from  "../../assets/velo.png"
+import { Link, useLocation } from 'react-router-dom'
 
 const Navbar = () => {
+
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [hash]);
+
   const items = [
     {
       li:'Home',
@@ -25,8 +38,12 @@ const Navbar = () => {
       link: "#contact"
     }, 
     {
+      li:'Login',
+      link: "/login"
+    }, 
+    {
       li:'Register',
-      link: "#register"
+      link: "/signup"
     }, 
   ]
   return (
@@ -38,7 +55,7 @@ const Navbar = () => {
         <ul className=''>
           {
             items.map((element,index)=>{
-              return <a href={element.link}><li key={index}>{element.li}</li></a>
+              return <Link to={element.link}><li key={index}>{element.li}</li></Link>
             })
           }
         </ul>

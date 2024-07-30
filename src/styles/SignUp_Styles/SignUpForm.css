@@ -1,0 +1,68 @@
+.singup-button{
+    padding: 0.7em 1em;
+    border: none;
+    background: var(--background-box-color);
+    border-radius: 0.5em;
+    color: yellow;
+    margin: 1em 0em;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.error-msg{
+    color: var(--color-danger);
+    transition: all 300ms ease;
+}
+.signup-section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 1em;
+
+}
+
+.signup-section Col{
+    border: 2px solid black;
+}
+.signup-section form{
+    margin: 2em 0em;
+}
+.signup-section label{
+    font-weight: bold;
+}
+.signup-title{
+    font-size: 2em;
+    font-weight: bolder;
+    text-align: center;
+    margin: 1em 0em 1em 0em;
+}
+
+.padding-col{
+    padding: 1em 0em;
+}
+.section-img img{
+    width: 75%;
+}
+.battle{
+    display: flex;
+    justify-content: center;
+    background: var(--background-box-color);
+    border-radius: 1em;
+
+}
+.battle span{
+    margin: 0em 0.5em;
+    color: yellow;
+    padding: 0.5em 1em;
+    text-align: center;
+    padding: 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.signup-section form{
+    border: 2px solid rgba(0,0,0,0.05);
+    border-radius: 1em;
+    padding: 2em 0em;
+}

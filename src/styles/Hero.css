@@ -33,3 +33,22 @@
     font-weight: bold;
     text-shadow: 2px 6px 19px rgba(0, 0, 0, 1);
 }
+.hero-applybutton{
+    padding: 1em 0em 0em 0em;
+}
+.hero-applybutton button{
+    padding: 1em;
+    font-weight: bold;
+    background-color: yellow;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    cursor: pointer;
+}
+
+.hero-applybutton button:hover span:first-child{
+    transition: all 500ms ease;
+    color: blue;
+    rotate: 360deg;
+}

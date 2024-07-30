@@ -4,33 +4,34 @@ import "../styles/Footer.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faFacebook, faTwitter, faInstagram, faDev } from '@fortawesome/free-brands-svg-icons';
 import { faUserTie, faHandshake, faDollarSign, faHandsHelping, faGavel, faHome, faCalendarAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 
     const options = [
         {
             name: "Home",
-            link: "#",
+            link: "/#hero",
             icon: <FontAwesomeIcon icon={faHome} />
         },
         {
             name: "Schedule",
-            link: "#",
+            link: "/#schedule",
             icon: <FontAwesomeIcon icon={faCalendarAlt} />
         },
         {
             name: "Sponsor",
-            link: "#",
+            link: "/#Sponsors",
             icon: <FontAwesomeIcon icon={faDollarSign} />
         },
         {
             name: "Partner",
-            link: "#",
+            link: "/#Partners",
             icon: <FontAwesomeIcon icon={faHandshake} />
         },
         {
             name: "Contact",
-            link: "#",
+            link: "/#contact",
             icon: <FontAwesomeIcon icon={faEnvelope} />
         },
     ]
@@ -99,9 +100,9 @@ const Footer = () => {
             {
                 options.map((element, index)=>{
                     return (
-                        <a key={
+                        <Link key={
                             index
-                        } href={element.link}><span>{element.icon}</span>{element.name}</a>
+                        } to={element.link}><span>{element.icon}</span>{element.name}</Link>
                     )
                 })
             }
@@ -129,7 +130,7 @@ const Footer = () => {
             }
         </div>
         <div>
-            <button>Register</button>
+            <Link to="/register"><button>Register</button></Link>
         </div>
     </section>
   )

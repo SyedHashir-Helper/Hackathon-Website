@@ -1,7 +1,7 @@
 import React from 'react'
-import img1 from "../images/full-stack.png"
-import img2 from "../images/img2.png"
-import img3 from "../images/img3.png"
+import img1 from "../../images/full-stack.png"
+import img2 from "../../images/img2.png"
+import img3 from "../../images/img3.png"
 import ImgText from './ImgText'
 const SideBySide = () => {
     const items = [

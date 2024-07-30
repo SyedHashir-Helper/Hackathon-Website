@@ -1,6 +1,6 @@
 import React from 'react'
-import code from "../images/full-stack.png"
-import "../styles/ImgText.css"
+import code from "../../images/full-stack.png"
+import "../../styles/ImgText.css"
 const ImgText = ({img, text, row}) => {
 
     const rowStyle = {}

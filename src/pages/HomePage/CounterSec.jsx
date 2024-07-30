@@ -1,6 +1,6 @@
 import React from 'react'
 import Counter from './Counter'
-import "../styles/CounterSec.css"
+import "../../styles/CounterSec.css"
 
 const CounterSec = () => {
 
