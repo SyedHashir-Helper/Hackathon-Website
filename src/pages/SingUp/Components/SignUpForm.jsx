@@ -1,13 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {useForm, Controller} from 'react-hook-form'
-import { Input, Row, Col, Form, Button } from 'antd'
+import { Input, Row, Col, Form, Button, message , Spin, Alert } from 'antd'
 import "../../../styles/SignUp_Styles/SignUpForm.css"
 import { Link } from 'react-router-dom'
 import signup from "../../../images/singup.png"
+import axios from 'axios'
 
 const SignUpForm = () => {
+  const [messageApi, contextHolder] = message.useMessage();
+  const [loading, setLoading] = useState(false); 
+  const [signupsuccess, setsignupsuccess] = useState(false)
 
-    const { register, handleSubmit, watch, control, formState: {errors}} =  useForm({
+    const { register, handleSubmit, watch, control, formState: {errors}, reset, trigger} =  useForm({
       defaultValues: {
         firstname: "",
         lastname: "",
@@ -18,10 +22,60 @@ const SignUpForm = () => {
       }
     })
 
-    const onSubmit = (data) => console.log(data)
+    const password = watch("password");
 
+    const error = (errmsg) => {
+      messageApi.open({
+        type: 'error',
+        content: errmsg,
+      });
+    };
+
+    const success = (successmsg) => {
+      messageApi.open({
+        type: 'success',
+        content: successmsg,
+        duration: 2
+      });
+    };
+
+    const onSubmit = async (data) => {
+      setLoading(true);
+      delete data["confirmpassword"]
+      try{
+          const response = await axios.post("http://localhost:3500/user/create", 
+            data,
+            {
+              headers: {
+              'Content-Type': 'application/json'
+            }
+          }
+        )
+        if (response.status != 200){
+          error("Error while registering user")
+        }
+        if (response.status == 200){
+          success("Congratulations... User Registered Successfully..")
+          setsignupsuccess(true)
+          reset()
+
+          setTimeout(() => {
+            console.log("Aya")
+            setsignupsuccess(false);
+          }, 3000);
+        }
+      }
+      catch(error){
+        error(error.message)
+      }
+      finally {
+        setLoading(false); // Set loading to false when request completes
+      }
+    }
   return (
+    
     <Row className='signup-section'  align={'top'}>
+      {contextHolder}
         <Col md={12} className='section-img' >
           <img src={signup}/>
         </Col>
@@ -103,10 +157,12 @@ const SignUpForm = () => {
                   <Controller
                     name="confirmpassword"
                     rules={{
-                      required: "It is mandatory"
+                      required: "It is mandatory",
+                      validate: value =>
+                        value === password || "The passwords do not match"
                     }}
                     control={control}
-                    render={({ field }) => <Input {...field} placeholder='Confirm Password' />}
+                    render={({ field }) => <Input {...field} placeholder='Confirm Password' type='password' />}
                   />
                   <p className='error-msg'>{errors.confirmpassword?.message}</p>
                 </Col>
@@ -116,8 +172,11 @@ const SignUpForm = () => {
                     Already Registered? Over to <Link to="/login">Login</Link> Section
                 </Col>
                 <Col pull={2}>
-                  <input type='submit' className='singup-button' value="SingUp" />
+                  <button type='submit' className='singup-button'>{loading ? <Spin /> : "Sign Up"} </button>
                 </Col>
+              </Row>
+              <Row align={'middle'} justify={'center'}>
+                  {signupsuccess && <Alert message="You can now login." type="success" showIcon closable />}
               </Row>
             </form>
         </Col>
